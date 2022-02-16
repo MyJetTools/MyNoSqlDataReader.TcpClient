@@ -1,0 +1,16 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MyNoSqlDataReader.TcpClient", "MyNoSqlDataReader.TcpClient\MyNoSqlDataReader.TcpClient.csproj", "{6E14CF90-4502-4914-B098-FF637BFCDBCF}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{6E14CF90-4502-4914-B098-FF637BFCDBCF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6E14CF90-4502-4914-B098-FF637BFCDBCF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6E14CF90-4502-4914-B098-FF637BFCDBCF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6E14CF90-4502-4914-B098-FF637BFCDBCF}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+EndGlobal
