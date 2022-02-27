@@ -7,9 +7,9 @@
     </PropertyGroup>
 
     <ItemGroup>
-        <PackageReference Include="MyNoSqlDataReader.Core" Version="1.0.5" />
-        <PackageReference Include="MyNoSqlServer.Abstractions" Version="1.2.2" />
-        <PackageReference Include="MyNoSqlServer.TcpContracts" Version="1.1.2" />
+        <PackageReference Include="MyNoSqlDataReader.Core" Version="1.0.6" />
+        <PackageReference Include="MyNoSqlServer.Abstractions" Version="1.2.3" />
+        <PackageReference Include="MyNoSqlServer.TcpContracts" Version="1.1.3" />
         <PackageReference Include="MyTcpSockets" Version="1.6.6" />
         <PackageReference Include="Newtonsoft.Json" Version="13.0.1" />
     </ItemGroup>

@@ -104,7 +104,9 @@ public class MyNoSqlServerClientTcpContext : ClientTcpContext<IMyNoSqlTcpContrac
                         SyncEventType.DeleteRows, MapToDeleteSyncContract(deleteRowsContract.RowsToDelete));
                     _handleSyncContract(deleteRowsSyncContract);
                     break;
-
+                
+                case ErrorTcpContract errorTcpContract:
+                    throw new Exception("Server Error: " + errorTcpContract.Message);
             }
         }
         catch (Exception e)
