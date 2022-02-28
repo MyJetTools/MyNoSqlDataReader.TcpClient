@@ -20,9 +20,6 @@ public class MyNoSqlServerClientTcpContext : ClientTcpContext<IMyNoSqlTcpContrac
         _tablesToSubscribe = tablesToSubscribe;
         _appName = appName;
     }
-    
-
-
 
     private static readonly Lazy<string> GetReaderVersion = new(() =>
     {
@@ -35,7 +32,6 @@ public class MyNoSqlServerClientTcpContext : ClientTcpContext<IMyNoSqlTcpContrac
             return "unknown";
         }
     });
-
 
     protected override ValueTask OnConnectAsync()
     {
@@ -74,7 +70,6 @@ public class MyNoSqlServerClientTcpContext : ClientTcpContext<IMyNoSqlTcpContrac
 
     protected override ValueTask HandleIncomingDataAsync(IMyNoSqlTcpContract data)
     {
-
         try
         {
             switch (data)

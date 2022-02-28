@@ -34,7 +34,7 @@ public class MyNoSqlDataReaderTcpConnection
     }
 
     
-    private readonly Dictionary<string, IMyNoSqlDataReader> _subscribers = new();
+    private readonly Dictionary<string, IMyNoSqlDataReaderEventUpdater> _subscribers = new();
     
     private readonly MyClientTcpSocket<IMyNoSqlTcpContract> _tcpClient;
     
@@ -87,8 +87,6 @@ public class MyNoSqlDataReaderTcpConnection
         }
         
     }
-    
-    
         
     private Action<LogItem>? _logCallback;
 
@@ -96,8 +94,6 @@ public class MyNoSqlDataReaderTcpConnection
     {
         _logCallback = logCallback;
     }
-
-    
 
     private void HandleIncomingPacket(SyncContract syncContract)
     {
@@ -107,7 +103,6 @@ public class MyNoSqlDataReaderTcpConnection
         }
     } 
     
-    
     public MyNoSqlDataReader<TDbRow> Subscribe<TDbRow>(string tableName) where TDbRow: IMyNoSqlEntity, new()
     {
         var parser = new TcpEventsParser<TDbRow>();
@@ -116,6 +111,19 @@ public class MyNoSqlDataReaderTcpConnection
         return result;
     }
 
+
+    public async Task WaitAllTablesAreInitialized()
+    {
+        foreach (var (id, subscriber) in _subscribers)
+        {
+            WriteInfoLog(null, $"Waiting for table [{id}] is initialized....");
+            Console.WriteLine($"Waiting for table [{id}] is initialized....");
+            await subscriber.IsInitialized();
+            WriteInfoLog(null, $"Table [{id}] is initialized!!!!!");
+            Console.WriteLine($"Table [{id}] is initialized!!!!!");
+            
+        }
+    }
 
     public void Start()
     {
